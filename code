@@ -1,0 +1,36 @@
+
+<!-- Script for content disable -->
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+      $('body').bind('cut copy paste', function (e) {
+       e.preventDefault();
+      })
+      $("body").on("contextmenu", function(e) {
+      return false;
+      })
+      })
+
+</script>
+
+
+
+  <script type="text/JavaScript">
+
+function disableselect(e) {
+  return false
+}
+
+function reEnable() {
+  return true
+}
+
+document.onselectstart = new Function ("return false")
+
+if (window.sidebar) {
+  document.onmousedown = disableselect
+  document.onclick = reEnable
+}
+</script>
+
+<!-- end of script content disable -->
